@@ -1,7 +1,7 @@
 const Footer = () => {
     return <footer className="row p-2 txt_min mt-4">
         <div className="col-2">
-            Logo Equipo
+            <img src="/media/prograJS.png" width="100px"></img>
         </div>
         <div className="col-2">
             <div className="">
