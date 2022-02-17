@@ -33,8 +33,11 @@
 .login-btn:hover {
     background-color: #21643e;
 }
-button.link-style {
+button.link-style, .link-style {
     color: #4a535a;
     text-decoration: none;
+    font-weight: 700;
 }
-
+button.admin {
+    width: 400px;
+}
