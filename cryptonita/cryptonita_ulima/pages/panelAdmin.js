@@ -1,7 +1,11 @@
 import Footer from "../components/footer.component"
 import Header from "../components/header.component"
+import React, { useEffect } from "react";
 
 const PanelAdmin = () => {
+    useEffect(() => {
+        document.title = "Página Principal | Crypto-nita"
+    })
     return <div>
         <Header></Header>
         <main className="row p-2">

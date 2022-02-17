@@ -1,7 +1,11 @@
 import Footer from "../components/footer.component"
 import Header from "../components/header.component"
+import React, { useEffect } from "react";
 
 const ListaOperaciones = () => {
+    useEffect(() => {
+        document.title = "Lista de Operaciones | Crypto-nita"
+    })
     return <div>
         <Header></Header>
         <main className="p-2 mt-4">

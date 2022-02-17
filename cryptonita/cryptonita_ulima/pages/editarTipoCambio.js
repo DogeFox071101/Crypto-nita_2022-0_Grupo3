@@ -1,7 +1,11 @@
 import Footer from "../components/footer.component"
 import Header from "../components/header.component"
+import React, { useEffect } from "react";
 
 const EditarTipoCambio = () => {
+    useEffect(() => {
+        document.title = "Editar Tipo de Cambio | Crypto-nita"
+    })
     return <div>
         <Header></Header>
         <main className="p-2 mt-4">
