@@ -14,10 +14,7 @@ const PanelCliente = () => {
             </h2>
             <div className="text-center my-4">
                 <div>
-                    <button className="btn btn-success m-2 admin">Comprar</button>
-                </div>
-                <div>
-                    <button className="btn btn-success m-2 admin">Vender</button>
+                    <button className="btn btn-success m-2 admin">Comprar o Vender</button>
                 </div>
                 <div>
                     <button className="btn btn-success m-2 admin">Historial de Operaciones</button>
