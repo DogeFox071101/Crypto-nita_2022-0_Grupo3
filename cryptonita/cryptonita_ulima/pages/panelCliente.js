@@ -2,7 +2,7 @@ import Footer from "../components/footer.component"
 import Header from "../components/header.component"
 import React, { useEffect } from "react";
 
-const PanelAdmin = () => {
+const PanelCliente = () => {
     useEffect(() => {
         document.title = "Página Principal | Crypto-nita"
     })
@@ -31,4 +31,4 @@ const PanelAdmin = () => {
     </div>
 }
 
-export default PanelAdmin
+export default PanelCliente
