@@ -8,7 +8,7 @@ const VentaBtcTer = () => {
     })
     return <div>
         <Header></Header>
-        <main class="p-2 mt-4">
+        <main class="p-2">
             <div>
                 <div class="text-center mb-4">
                     <i class="bi bi-circle-fill mx-1"></i>
@@ -21,7 +21,7 @@ const VentaBtcTer = () => {
                 <div class="text-center my-4">
                     <h2>¡Ahora es nuestro turno!</h2>
                 </div>
-                <div class="row col-6 mx-auto">
+                <div class="row col-10 col-sm-8 col-lg-6 mx-auto">
                     <div class="px-0 mb-4">
                         Puedes revisar los datos de tu transacción. Dentro de breve verificaremos la operación y transferiremos el monto correspondiente.
                     </div>
@@ -34,7 +34,7 @@ const VentaBtcTer = () => {
                     </div>
                     <input class="form-control mb-4" type="text" />
                 </div>
-                <div class=" row col-6 mx-auto mb-5">
+                <div class=" row col-10 col-sm-8 col-lg-6 mx-auto mb-5">
                     <div class="col-12 px-0">
                         <button class="btn btn-success col-12">Finalizar</button>
                     </div>

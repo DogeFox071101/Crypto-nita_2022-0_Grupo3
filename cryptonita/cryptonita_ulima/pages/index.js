@@ -9,11 +9,11 @@ export default function Home() {
     })
     return <div>
         <Header index="1"></Header>
-        <main className="row p-2">
-            <picture className="col-8 text-center">
-                <img className="picture2" src="/media/Criptomoneda.png" alt="" />
+        <main className="row p-lg-2">
+            <picture className="col-lg-8 text-center">
+                <img className="col-12 col-lg-9" src="/media/Criptomoneda.png" alt="" />
             </picture>
-            <div className="col-4">
+            <div className="col-lg-4">
                 <LoginField></LoginField>
             </div>
         </main>

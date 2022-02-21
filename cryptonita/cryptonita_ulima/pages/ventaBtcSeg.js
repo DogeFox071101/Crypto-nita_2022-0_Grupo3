@@ -21,7 +21,7 @@ const VentaBtcSeg = () => {
                 <div class="text-center my-4">
                     <h2>¡Ya casi terminamos!</h2>
                 </div>
-                <div class="row col-5 mx-auto">
+                <div class="row col-10 col-sm-8 col-lg-6 mx-auto">
                     <div class="px-0">
                         <label class="form-label" for="">(1) Realiza el depósito en Bitcoins a nuestro monedero:</label>
                     </div>
@@ -31,7 +31,7 @@ const VentaBtcSeg = () => {
                     </div>
                     <input class="form-control mb-4" type="text" />
                 </div>
-                <div class=" row col-5 mx-auto mb-5">
+                <div class=" row col-10 col-sm-8 col-lg-6 mx-auto mb-5">
                     <div class="col-6 pe-1 ps-0">
                         <button class="btn btn-success col-12">Regresar</button>
                     </div>

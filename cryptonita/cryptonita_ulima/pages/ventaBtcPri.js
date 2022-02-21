@@ -8,7 +8,7 @@ const VentaBtcPri = () => {
     })
     return <div>
         <Header></Header>
-        <main class="p-2 mt-4">
+        <main class="p-2">
             <div>
                 <div class="text-center mb-4">
                     <i class="bi bi-circle-half mx-1"></i>
@@ -21,16 +21,16 @@ const VentaBtcPri = () => {
                 <div class="text-center my-4">
                     <h2>¿Donde quieres recibir tu dinero?</h2>
                 </div>
-                <div class="row col-5 mx-auto">
+                <div class="row col-10 col-sm-8 col-lg-6 mx-auto">
                     <div class="px-0">
-                        <label class="form-label" for="">Número de Cuenta:</label>
+                        <label class="form-label" htmlFor="">Número de Cuenta:</label>
                     </div>
                     <input class="form-control" type="text" />
                     <div class="alert alert-danger mt-2">
                         Aviso: Temporalmente solo aceptamos transferencias a cuentas BCP.
                     </div>
                 </div>
-                <div class=" row col-5 mx-auto mb-5">
+                <div class=" row row col-10 col-sm-8 col-lg-6 mx-auto mb-5">
                     <div class="col-6 pe-1 ps-0">
                         <button class="btn btn-success col-12">Regresar</button>
                     </div>

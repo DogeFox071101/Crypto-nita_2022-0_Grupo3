@@ -1,5 +1,5 @@
 const LoginField = () => {
-    return <div className="col-12 p-5">
+    return <div className="col-12 pt-5 p-lg-5">
         <div className="">
             <div className="txt_max link-style">
                 Iniciar Sesión

@@ -12,40 +12,40 @@ const EditarOperacion = () => {
             <div className="mt-2 mb-4 text-center">
                 <h2 className="">Editar Operación:</h2>
             </div>
-            <div className="col-5 mx-auto my-2">
+            <div className="col-10 col-sm-8 col-lg-6 mx-auto my-2">
                 <div className="row my-2">
-                    <label className="col-4" for="">ID de Operación:</label>
-                    <input className="col-8" type="text" />
+                    <label className="col-sm-4 px-0 pb-2" for="">ID de Operación:</label>
+                    <input className="col-sm-8" type="text" />
                 </div>
                 <div className="row my-2">
-                    <label className="col-4" for="">Fecha y Hora:</label>
-                    <input className="col-8" type="text" />
+                    <label className="col-sm-4 px-0 pb-2" for="">Fecha y Hora:</label>
+                    <input className="col-sm-8" type="text" />
                 </div>
                 <div className="row my-2">
-                    <label className="col-4" for="">Cliente:</label>
-                    <input className="col-8" type="text" />
+                    <label className="col-sm-4 px-0 pb-2" for="">Cliente:</label>
+                    <input className="col-sm-8" type="text" />
                 </div>
                 <div className="row my-2">
-                    <label className="col-4" for="">Tipo de Operación:</label>
-                    <input className="col-8" type="text" />
+                    <label className="col-sm-4 px-0 pb-2" for="">Tipo de Operación:</label>
+                    <input className="col-sm-8" type="text" />
                 </div>
                 <div className="row my-2">
-                    <label className="col-4" for="">Tipo de Cambio:</label>
-                    <input className="col-8" type="text" />
+                    <label className="col-sm-4 px-0 pb-2" for="">Tipo de Cambio:</label>
+                    <input className="col-sm-8" type="text" />
                 </div>
                 <div className="row my-2">
-                    <label className="col-4" for="">Monto:</label>
-                    <input className="col-8" type="text" />
+                    <label className="col-sm-4 px-0 pb-2" for="">Monto:</label>
+                    <input className="col-sm-8" type="text" />
                 </div>
                 <div className="row my-2">
-                    <label className="col-4" for="">Estado:</label>
-                    <input className="col-8" type="text" />
+                    <label className="col-sm-4 px-0 pb-2" for="">Estado:</label>
+                    <input className="col-sm-8" type="text" />
                 </div>
-                <div className="row mt-4 mb-4">
-                    <div className="col-6 pf-0 pe-1">
+                <div className="my-4 row">
+                    <div className="col-sm-6 pe-sm-1 mb-1 mb-sm-0 g-0">
                         <button className="btn btn-success col-12">Cancelar</button>
                     </div>
-                    <div className="col-6 pe-1 pf-0">
+                    <div className="col-sm-6 pe-sm-1 mt-1 mb-sm-0 g-0">
                         <button className="btn btn-success col-12">Aplicar Cambios</button>
                     </div>
                 </div>

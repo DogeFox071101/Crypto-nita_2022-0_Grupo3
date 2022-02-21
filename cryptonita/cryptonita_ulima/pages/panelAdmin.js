@@ -8,22 +8,22 @@ const PanelAdmin = () => {
     })
     return <div>
         <Header></Header>
-        <main className="row p-2">
-            <h2 className="text-center my-4">
+        <main className="p-2">
+            <h2 className="text-center my-4 col-12">
                 Bienvenido Administrador: ¿Qué quieres hacer hoy?
             </h2>
-            <div className="text-center my-4">
-                <div>
-                    <button className="btn btn-success m-2 admin">Administrar Clientes</button>
+            <div className="text-center my-4 col-12 col-lg-8 mx-auto">
+                <div className="col-12">
+                    <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2">Administrar Clientes</button>
                 </div>
-                <div>
-                    <button className="btn btn-success m-2 admin">Editar Tipo de Cambio</button>
+                <div className="col-12">
+                    <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2">Editar Tipo de Cambio</button>
                 </div>
-                <div>
-                    <button className="btn btn-success m-2 admin">Administrar Operaciones</button>
+                <div className="col-12">
+                    <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2">Administrar Operaciones</button>
                 </div>
-                <div>
-                    <button className="btn btn-success m-2 admin">Cerrar Sesión</button>
+                <div className="col-12">
+                    <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2">Cerrar Sesión</button>
                 </div>
             </div>
         </main>

@@ -13,8 +13,8 @@ const ListaOperaciones = () => {
                 <h2 className="col-8">Listado de Operaciones</h2>
                 <h4 className="col-4 text-end my-auto">Monto Total (BTC): <i class="bi bi-currency-bitcoin"></i>542</h4>
             </div>
-            <div className="col-12 mx-auto my-2">
-                <table className="table table-stripped table-bordered table-responsive">
+            <div className="col-12 mx-auto my-2 table-responsive">
+                <table className="table table-stripped table-bordered">
                     <thead>
                         <tr>
                             <th>ID de Operación</th>
