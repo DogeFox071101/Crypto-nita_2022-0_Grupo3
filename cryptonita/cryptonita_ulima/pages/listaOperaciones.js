@@ -8,13 +8,13 @@ const ListaOperaciones = () => {
     })
     return <div>
         <Header></Header>
-        <main className="p-2 mt-4">
-            <div className="row mt-2 mb-4">
-                <h2 className="col-8">Listado de Operaciones</h2>
-                <h4 className="col-4 text-end my-auto">Monto Total (BTC): <i class="bi bi-currency-bitcoin"></i>542</h4>
+        <main className="p-2 mt-sm-4">
+            <div className="row mb-4">
+                <h2 className="col-12 col-sm-8 text-center text-sm-start list-title">Listado de Operaciones</h2>
+                <h2 className="col-12 col-sm-4 text-center text-sm-end my-auto list-size mt-2 mt-sm-0">Monto Total (BTC): <i class="bi bi-currency-bitcoin"></i>542</h2>
             </div>
             <div className="col-12 mx-auto my-2 table-responsive">
-                <table className="table table-stripped table-bordered">
+                <table className="table table-stripped table-bordered list-table">
                     <thead>
                         <tr>
                             <th>ID de Operación</th>

@@ -6,7 +6,7 @@ const Header = (props) => {
     }
     
     if (props.index == "1") {
-        return <header className="row p-2 mb-4">
+        return <header className="row p-2 mb-4 text-center text-lg-start">
             <figure className="col-lg-9 m-0">
                 <a href="/">
                     <img className="logo" src="/media/cryptonita.png" alt="" />

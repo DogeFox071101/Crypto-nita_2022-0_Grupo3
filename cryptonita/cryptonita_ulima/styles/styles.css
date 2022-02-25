@@ -39,11 +39,30 @@ button.link-style, .link-style {
     height: 89px;
 }
 
+
+
 @media (max-width: 992px)  {
     .logo {
         height: 100px;
     }
-    .register-btn{
+    .register-btn {
         height: 40px;
+    }
+
+    .list-title{
+        font-size: 1em;
+    }
+
+    .list-size {
+        font-size: 1em;
+    }
+}
+@media (max-width: 575px) {
+    .list-title{
+        font-size: 1.5em;
+    }
+
+    .list-table {
+        font-size: 0.8em;
     }
 }
