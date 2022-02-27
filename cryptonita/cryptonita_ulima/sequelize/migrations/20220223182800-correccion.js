@@ -9,7 +9,7 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
       await queryInterface.createTable('Operacion', {
-        numOperacion: {
+        id: {
           allowNull: false,
           autoIncrement: true,
           primaryKey: true,
@@ -31,6 +31,9 @@ module.exports = {
           type: Sequelize.STRING
         },
         cuentaBancaria: {
+          type: Sequelize.STRING
+        },
+        idCliente: {
           type: Sequelize.STRING
         },
         createdAt: {

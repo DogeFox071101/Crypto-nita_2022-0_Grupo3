@@ -3,6 +3,10 @@ import Header from "../components/header.component"
 import React, { useEffect } from "react";
 
 const PanelAdmin = () => {
+    const goToEditTC = () => {
+        location.href = "/editarTipoCambio"
+    }
+    
     useEffect(() => {
         document.title = "Página Principal | Crypto-nita"
     })
@@ -17,7 +21,7 @@ const PanelAdmin = () => {
                     <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2">Administrar Clientes</button>
                 </div>
                 <div className="col-12">
-                    <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2">Editar Tipo de Cambio</button>
+                    <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2" onClick={ goToEditTC }>Editar Tipo de Cambio</button>
                 </div>
                 <div className="col-12">
                     <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2">Administrar Operaciones</button>

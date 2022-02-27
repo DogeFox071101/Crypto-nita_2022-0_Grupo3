@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   TipoCambio.init({
-    value: DataTypes.STRING
+    valueBuy: DataTypes.STRING,
+    valueSell: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'TipoCambio',

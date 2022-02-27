@@ -21,6 +21,11 @@ export default function Home() {
             else if (data.mode == "admin") {
                 location.href = "/panelAdmin"
             }
+            const loginData = JSON.stringify({
+                email : email,
+                password : password
+            })
+            localStorage.setItem("lastDataLogin", loginData)
         }
         else {
             setErrorLogin(true)

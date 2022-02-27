@@ -1,4 +1,5 @@
 const Footer = () => {
+    
     return <footer className="row p-2 txt_min mt-5">
         <div className="col-lg-2 order-3 order-lg-1 text-center">
             <img className="footer-image" src="/media/prograJS.png"></img>

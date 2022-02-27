@@ -1,7 +1,4 @@
 import { getUsuarioByEmail, getAdminByEmail } from "../../../../../dao/usuario";
-import usuario from "../../../../../sequelize/models/usuario";
-
-
 
 const loginSelector = async (user) => {
     var usuario = await getUsuarioByEmail(user)
