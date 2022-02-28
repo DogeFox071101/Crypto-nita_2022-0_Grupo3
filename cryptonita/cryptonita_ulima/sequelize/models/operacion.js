@@ -17,13 +17,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Operacion.init({
-    tipoCambio: DataTypes.FLOAT,
-    montoBtc: DataTypes.FLOAT,
-    tipoOperacion: DataTypes.STRING,
-    estado: DataTypes.STRING,
-    billeteraBtc: DataTypes.STRING,
-    cuentaBancaria: DataTypes.STRING,
-    idCliente: DataTypes.STRING
+    tipoCambio: DataTypes.FLOAT,          //
+    montoBtc: DataTypes.FLOAT,            //
+    tipoOperacion: DataTypes.STRING,      //
+    estado: DataTypes.STRING,             //
+    billeteraBtc: DataTypes.STRING,       //
+    cuentaBancaria: DataTypes.STRING,     //
+    codigoTransaccion: DataTypes.STRING,  //
+    idCliente: DataTypes.STRING           //
   }, {
     sequelize,
     modelName: 'Operacion',
