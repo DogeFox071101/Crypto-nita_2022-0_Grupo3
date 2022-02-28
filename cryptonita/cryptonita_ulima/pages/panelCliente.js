@@ -3,6 +3,15 @@ import Header from "../components/header.component"
 import React, { useEffect } from "react";
 
 const PanelCliente = () => {
+    const gotoCV = () => {
+        location.href = "/compraVenta"
+    }
+
+    const gotoHO = () => {
+        location.href = "/historialOpRealizadas"
+    }
+
+
     useEffect(() => {
         document.title = "Página Principal | Crypto-nita"
     })
@@ -14,10 +23,10 @@ const PanelCliente = () => {
             </h2>
             <div className="text-center my-4">
                 <div>
-                    <button className="btn btn-success m-2 admin">Comprar o Vender</button>
+                    <button className="btn btn-success m-2 admin" onClick={ gotoCV } >Comprar o Vender</button>
                 </div>
                 <div>
-                    <button className="btn btn-success m-2 admin">Historial de Operaciones</button>
+                    <button className="btn btn-success m-2 admin" onClick={ gotoHO } >Historial de Operaciones</button>
                 </div>
                 <div>
                     <button className="btn btn-success m-2 admin">Cerrar Sesión</button>

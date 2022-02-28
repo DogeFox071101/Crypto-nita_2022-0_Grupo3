@@ -6,6 +6,15 @@ const PanelAdmin = () => {
     const goToEditTC = () => {
         location.href = "/editarTipoCambio"
     }
+
+    const goToEditC = () => {
+        location.href = "/editarCliente"
+    }
+    
+
+    const goToEditOP = () => {
+        location.href = "/editarOperacion"
+    }
     
     useEffect(() => {
         document.title = "Página Principal | Crypto-nita"
@@ -18,13 +27,13 @@ const PanelAdmin = () => {
             </h2>
             <div className="text-center my-4 col-12 col-lg-8 mx-auto">
                 <div className="col-12">
-                    <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2">Administrar Clientes</button>
+                    <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2" onClick={ goToEditC } >Administrar Clientes</button>
                 </div>
                 <div className="col-12">
                     <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2" onClick={ goToEditTC }>Editar Tipo de Cambio</button>
                 </div>
                 <div className="col-12">
-                    <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2">Administrar Operaciones</button>
+                    <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2" onClick={ goToEditOP } >Administrar Operaciones</button>
                 </div>
                 <div className="col-12">
                     <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2">Cerrar Sesión</button>
