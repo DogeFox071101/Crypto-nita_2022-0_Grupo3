@@ -1,11 +1,13 @@
 import { genOperacion, getOperacion, getOperaciones, getOperacionesUsuario, setOperacion, delOperacion, getOperacionIncompleta } from "../../../../../dao/operacion";
+import { getUsuario } from "../../../../../dao/usuario";
 
 const operacionHandlerSec = async (req, res) => {
     if (req.method == "GET") {
         if (req.query.mode == "id") {
             const operacion = await getOperacion(req.query.id)
             res.json({
-                operacion: operacion
+                msg : "",
+                operacion : operacion,
             })
         }
         else if (req.query.mode == "client") {

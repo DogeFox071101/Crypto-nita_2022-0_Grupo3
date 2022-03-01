@@ -1,10 +1,12 @@
 import { genOperacion, getOperacion, getOperaciones, getOperacionesUsuario, setOperacion, delOperacion } from "../../../dao/operacion";
+import { getUsuario } from "../../../dao/usuario";
 
 const operacionHandler = async (req, res) => {
     if (req.method == "GET") {
         const operaciones = await getOperaciones()
         const operacionesEnLista = []
         for (let operacion of operaciones) {
+            const usuario = await getUsuario(parseInt(operacion.idCliente))
             operacionesEnLista.push({
                 id : operacion.id,
                 tipoCambio : operacion.tipoCambio,
@@ -14,8 +16,11 @@ const operacionHandler = async (req, res) => {
                 billeteraBtc : operacion.billeteraBt,
                 cuentaBancaria : operacion.cuentaBancaria,
                 codigoTransaccion : operacion.codigoTransaccion,
+                idCliente : operacion.idCliente,
                 createdAt: operacion.createdAt,
-                updatedAt: operacion.updatedAt
+                updatedAt: operacion.updatedAt,
+                nombre : usuario.nombre,
+                apellidos : usuario.apellidos,
             })
         }
         res.json({

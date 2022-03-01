@@ -18,4 +18,22 @@ const getAdminByEmail = async (email) => {
     })
 }
 
-export { getUsuarioByEmail, getAdminByEmail }
+const getUsuario = async (id) => {
+    return await db.Usuario.findOne({
+        where : {
+            id : id
+        }
+    })
+}
+
+const getUsuarios = async () => {
+    return await db.Usuario.findAll({
+        
+    })
+}
+
+const setUsuario = async (usuario) => {
+    
+}
+
+export { getUsuarioByEmail, getAdminByEmail, getUsuario, getUsuarios }
