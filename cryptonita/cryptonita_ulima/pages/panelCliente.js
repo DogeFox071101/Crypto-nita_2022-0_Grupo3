@@ -11,6 +11,10 @@ const PanelCliente = () => {
         location.href = "/historialOpRealizadas"
     }
 
+    const gotoLogin = () => {
+        location.href = "/"
+    }
+
 
     useEffect(() => {
         document.title = "Página Principal | Crypto-nita"
@@ -29,7 +33,7 @@ const PanelCliente = () => {
                     <button className="btn btn-success m-2 admin" onClick={ gotoHO } >Historial de Operaciones</button>
                 </div>
                 <div>
-                    <button className="btn btn-success m-2 admin">Cerrar Sesión</button>
+                    <button className="btn btn-success m-2 admin" onClick={ gotoLogin }>Cerrar Sesión</button>
                 </div>
             </div>
         </main>

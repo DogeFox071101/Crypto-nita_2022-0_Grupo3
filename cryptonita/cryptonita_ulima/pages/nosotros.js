@@ -12,9 +12,9 @@ const Nosotros = () => {
 
             <div className="row">
                 <div className="col-1">
-
-                    <img src="/back.png" alt="Vercel Logo" width={40} height={40} />
-
+                    <a href="/">
+                        <img src="/back.png" alt="Vercel Logo" width={40} height={40} />
+                    </a>
                 </div>
                 <h1 className="col-8">Nosotros</h1>
             </div>

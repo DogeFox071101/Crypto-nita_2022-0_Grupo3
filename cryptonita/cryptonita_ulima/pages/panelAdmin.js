@@ -16,6 +16,11 @@ const PanelAdmin = () => {
         location.href = "/editarOperacion"
     }
     
+
+    const goToHome = () => {
+        location.href = "/"
+    }
+    
     useEffect(() => {
         document.title = "Página Principal | Crypto-nita"
     })
@@ -36,7 +41,7 @@ const PanelAdmin = () => {
                     <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2" onClick={ goToEditOP } >Administrar Operaciones</button>
                 </div>
                 <div className="col-12">
-                    <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2">Cerrar Sesión</button>
+                    <button className="col-12 col-lg-7 btn btn-success my-2 m-lg-2" onClick={ goToHome }>Cerrar Sesión</button>
                 </div>
             </div>
         </main>
