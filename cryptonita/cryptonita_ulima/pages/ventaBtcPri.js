@@ -1,8 +1,72 @@
 import Header from "../components/header.component"
 import Footer from "../components/footer.component"
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const VentaBtcPri = () => {
+    const [txtCuentaBancaria, setTxtCuentaBancaria] = useState("")
+    const [operacion, setOperacion] = useState(null)
+
+    const txtCuentaBancariaOnChange = (event) => {
+        const txtCuentaBancariaIngresado = event.target.value
+        setTxtCuentaBancaria(txtCuentaBancariaIngresado)
+    }
+    
+    const crearOperacion = async () => {
+        // Data on LocalStorage
+        const dataOnLocal = {
+            email : "lgfalconch@gmail.com",
+            password : "2f4f13561f3e031d1b5a489627c170df87a132245feb64582e50880995f9c230",
+            id : "1"
+        }
+        // Generación de Operación Temporal
+        const mensaje1 = {
+            tipoCambio : "12345",
+            montoBtc : "0.005",
+            tipoOperacion : "Venta",
+            idCliente : dataOnLocal.id
+        }
+        const resp1 = await fetch("/api/operacion", {
+            method : "POST",
+            body : JSON.stringify(mensaje1)
+        })
+        const data1 = await resp1.json()
+    }
+
+    const obtenerOperacionIncompleta = async () => {
+        const dataOnLocal = {
+            email : "lgfalconch@gmail.com",
+            password : "2f4f13561f3e031d1b5a489627c170df87a132245feb64582e50880995f9c230",
+            id : "1"
+        }
+        const resp = await fetch(`/api/operacion/incomplete/${dataOnLocal.id}`)
+        const data = await resp.json()
+        setOperacion(data.operacion)
+        console.log(data.operacion)
+    }
+
+    const actualizarOperacionVentaUno = () => {
+        const operacionActual = operacion
+        console.log(operacionActual)
+        operacionActual.cuentaBancaria = txtCuentaBancaria
+        setOperacion(operacionActual)
+    }
+
+    const subirOperacionIncompleta = async () => {
+        console.log(operacion)
+        const resp = await fetch("/api/operacion", {
+            method : "PUT",
+            body : JSON.stringify(operacion)
+        })
+        const data = await resp.json()
+    }
+    const buttonNextHandler = async () => {
+        //await crearOperacion()
+        await obtenerOperacionIncompleta()
+        actualizarOperacionVentaUno()
+        await subirOperacionIncompleta()
+        location.href = "/ventaBtcSeg"
+    }
+    
     useEffect(() => {
         document.title = "Paso 1 de 3 | Venta de BTC"
     })
@@ -23,9 +87,9 @@ const VentaBtcPri = () => {
                 </div>
                 <div class="row col-10 col-sm-8 col-lg-6 mx-auto">
                     <div class="px-0">
-                        <label class="form-label" htmlFor="">Número de Cuenta:</label>
+                        <label class="form-label">Número de Cuenta:</label>
                     </div>
-                    <input class="form-control" type="text" />
+                    <input class="form-control" type="text" defaultValue={ txtCuentaBancaria } onChange={ txtCuentaBancariaOnChange } />
                     <div class="alert alert-danger mt-2">
                         Aviso: Temporalmente solo aceptamos transferencias a cuentas BCP.
                     </div>
@@ -35,7 +99,7 @@ const VentaBtcPri = () => {
                         <button class="btn btn-success col-12">Regresar</button>
                     </div>
                     <div class="col-6 ps-1 pe-0">
-                        <button class="btn btn-success col-12">Continuar</button>
+                        <button class="btn btn-success col-12" onClick={ buttonNextHandler }>Continuar</button>
                     </div>
                 </div>
             </div>

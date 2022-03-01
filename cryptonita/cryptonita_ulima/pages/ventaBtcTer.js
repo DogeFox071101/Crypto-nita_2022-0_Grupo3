@@ -1,10 +1,31 @@
 import Header from "../components/header.component"
 import Footer from "../components/footer.component"
-import React, { useEffect } from "react";
+import React, { Component, useEffect, useState } from "react";
 
 const VentaBtcTer = () => {
+    const [ultimaOperacion, setUltimaOperacion] = useState("")
+    const [resultadoSoles, setResultadoSoles] = useState(0.0)
+    
+    const calcularOperacionSoles = async () => {
+        
+        const resp = await fetch(`/api/operacion/id/${ultimaOperacion}`)
+        const data = await resp.json()
+        const montoBtc = parseFloat(data.operacion.montoBtc)
+        const tipoCambio = parseFloat(data.operacion.tipoCambio)
+        const resultado = montoBtc*tipoCambio
+        setResultadoSoles(resultado)
+    }
+
+    const buttonFinalizar = () => {
+        localStorage.removeItem("ultimaOperacion")
+        location.href = "/panelCliente"
+    }
+
     useEffect(() => {
         document.title = "Paso 3 de 3 | Venta de BTC"
+        const lastOperation = localStorage.getItem("ultimaOperacion")
+        setUltimaOperacion(lastOperation)
+        calcularOperacionSoles()
     })
     return <div>
         <Header></Header>
@@ -26,17 +47,30 @@ const VentaBtcTer = () => {
                         Puedes revisar los datos de tu transacción. Dentro de breve verificaremos la operación y transferiremos el monto correspondiente.
                     </div>
                     <div class="px-0">
-                        <label class="form-label" for="">Número de transacción: </label>
+                        <label class="form-label">Número de transacción: </label>
                     </div>
-                    <input class="form-control" type="text" />
+                    <div className="mb-3 px-0">
+                    {
+                        (() => {
+                            return ultimaOperacion
+                        })()
+                    }
+                    </div>
                     <div class="px-0 mt-4">
-                        <label class="form-label" for="">Monto en soles operado:</label>
+                        <label class="form-label">Monto en soles operado:</label>
                     </div>
-                    <input class="form-control mb-4" type="text" />
+                    <div className="mb-3 px-0">
+                    {
+                        (() => {
+                            
+                            return "S/ " + resultadoSoles
+                        })()
+                    }
+                    </div>
                 </div>
                 <div class=" row col-10 col-sm-8 col-lg-6 mx-auto mb-5">
                     <div class="col-12 px-0">
-                        <button class="btn btn-success col-12">Finalizar</button>
+                        <button class="btn btn-success col-12" onClick={ buttonFinalizar }>Finalizar</button>
                     </div>
                 </div>
             </div>

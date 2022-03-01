@@ -20,6 +20,14 @@ const getOperacion = async (id) => {
         },
     })
 }
+const getOperacionIncompleta = async (idCliente) => {
+    return await db.Operacion.findOne({
+        where : {
+            idCliente : idCliente,
+            estado : "Incompleto"
+        }
+    })
+}
 const getOperaciones = async () => {
     return await db.Operacion.findAll({
         order : [
@@ -39,6 +47,7 @@ const getOperacionesUsuario = async (idCliente) => {
 }
 const setOperacion = async (operacion) => {
     const operacionAModificar = await getOperacion(operacion.id)
+    console.log(operacion)
     operacionAModificar.tipoCambio = operacion.tipoCambio
     operacionAModificar.montoBtc = operacion.montoBtc
     operacionAModificar.tipoOperacion = operacion.tipoOperacion
@@ -57,4 +66,4 @@ const delOperacion = async (id) => {
     })
 }
 
-export { genOperacion, getOperacion, getOperaciones, getOperacionesUsuario, setOperacion, delOperacion }
+export { genOperacion, getOperacion, getOperaciones, getOperacionesUsuario, setOperacion, delOperacion, getOperacionIncompleta }

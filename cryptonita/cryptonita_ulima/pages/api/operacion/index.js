@@ -20,7 +20,7 @@ const operacionHandler = async (req, res) => {
         }
         res.json({
             msg : "",
-            proyectos : operacionesEnLista
+            operaciones : operacionesEnLista
         })
     }
     else if (req.method == "POST") {
@@ -43,3 +43,4 @@ const operacionHandler = async (req, res) => {
         })
     }
 }
+export default operacionHandler
