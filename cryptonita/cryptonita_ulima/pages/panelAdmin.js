@@ -8,12 +8,12 @@ const PanelAdmin = () => {
     }
 
     const goToEditC = () => {
-        location.href = "/editarCliente"
+        location.href = "/listaClientes"
     }
     
 
     const goToEditOP = () => {
-        location.href = "/editarOperacion"
+        location.href = "/listaOperaciones"
     }
     
 
