@@ -11,7 +11,7 @@ const HistorialOperaciones = () => {
         <main className="p-2 mt-4">
             <div className="row mt-2 mb-4">
                 <h2 className="col-8">Historial de Operaciones</h2>
-                <h4 className="col-4 text-end my-auto">Monto Total (BTC): <i class="bi bi-currency-bitcoin"></i>542</h4>
+                <h4 className="col-4 text-end my-auto">Monto Total (BTC): <i className="bi bi-currency-bitcoin"></i>542</h4>
             </div>
             <div className="col-12 mx-auto my-2">
                 <table className="table table-stripped table-bordered table-responsive">

@@ -8,35 +8,35 @@ const VentaBtcTer = () => {
     })
     return <div>
         <Header></Header>
-        <main class="p-2 mt-4">
+        <main className="p-2 mt-4">
             <div>
-                <div class="text-center mb-4">
-                    <i class="bi bi-circle-fill mx-1"></i>
-                    <i class="bi bi-circle-fill mx-1"></i>
-                    <i class="bi bi-circle-half mx-1"></i>
+                <div className="text-center mb-4">
+                    <i className="bi bi-circle-fill mx-1"></i>
+                    <i className="bi bi-circle-fill mx-1"></i>
+                    <i className="bi bi-circle-half mx-1"></i>
                 </div>
-                <div class="text-center my-4">
+                <div className="text-center my-4">
                     <h2>Paso 3 de 3</h2>
                 </div>
-                <div class="text-center my-4">
+                <div className="text-center my-4">
                     <h2>¡Ahora es nuestro turno!</h2>
                 </div>
-                <div class="row col-6 mx-auto">
-                    <div class="px-0 mb-4">
+                <div className="row col-6 mx-auto">
+                    <div className="px-0 mb-4">
                         ¡Operación realizada exitosamente!
                     </div>
-                    <div class="px-0">
-                        <label class="form-label" for="">Número de operación: </label>
+                    <div className="px-0">
+                        <label className="form-label" htmlFor="">Número de operación: </label>
                     </div>
-                    <input class="form-control" type="text" />
-                    <div class="px-0 mt-4">
-                        <label class="form-label" for="">Fecha de operación:</label>
+                    <input className="form-control" type="text" />
+                    <div className="px-0 mt-4">
+                        <label className="form-label" htmlFor="">Fecha de operación:</label>
                     </div>
-                    <input class="form-control mb-4" type="text" />
+                    <input className="form-control mb-4" type="text" />
                 </div>
-                <div class=" row col-6 mx-auto mb-5">
-                    <div class="col-12 px-0">
-                        <button class="btn btn-success col-12">Finalizar</button>
+                <div className=" row col-6 mx-auto mb-5">
+                    <div className="col-12 px-0">
+                        <button className="btn btn-success col-12">Finalizar</button>
                     </div>
                 </div>
             </div>

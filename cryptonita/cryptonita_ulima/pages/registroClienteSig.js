@@ -2,7 +2,7 @@ import Footer from "../components/footer.component"
 import Header from "../components/header.component"
 import React, { useEffect } from "react";
 
-const registroClienteSig = () => {
+const RegistroClienteSig = () => {
     const gotoRegistro1 = () => {
         location.href = "/registroCliente"
     }
@@ -23,15 +23,15 @@ const registroClienteSig = () => {
                 Registro
             </h2>
             <div className="text-center my-4">
-            <div class="container-fluid mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Correo Electrónico*"/>
-            <label for="exampleFormControlInput1" class="form-label">Nueva Contraseña</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nueva Contraseña*"/>
-            <label for="exampleFormControlInput1" class="form-label">Confirmar Contraseña</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Confirmar Contraseña*"/>
-            <label for="exampleFormControlInput1" class="form-label">Número Telefónico</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Número Telefónico*"/>
+            <div className="container-fluid mb-3">
+            <label htmlFor="exampleFormControlInput1" className="form-label">Correo Electrónico</label>
+            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Correo Electrónico*"/>
+            <label htmlFor="exampleFormControlInput1" className="form-label">Nueva Contraseña</label>
+            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Nueva Contraseña*"/>
+            <label htmlFor="exampleFormControlInput1" className="form-label">Confirmar Contraseña</label>
+            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Confirmar Contraseña*"/>
+            <label htmlFor="exampleFormControlInput1" className="form-label">Número Telefónico</label>
+            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Número Telefónico*"/>
             </div>
                 <div>
                     <button className="btn btn-success m-2 admin" onClick={ gotoValidacion }>Siguiente</button>
@@ -45,4 +45,4 @@ const registroClienteSig = () => {
     </div>
 }
 
-export default registroClienteSig
+export default RegistroClienteSig

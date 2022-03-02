@@ -29,25 +29,25 @@ const VentaBtcTer = () => {
     })
     return <div>
         <Header></Header>
-        <main class="p-2">
+        <main className="p-2">
             <div>
-                <div class="text-center mb-4">
-                    <i class="bi bi-circle-fill mx-1"></i>
-                    <i class="bi bi-circle-fill mx-1"></i>
-                    <i class="bi bi-circle-half mx-1"></i>
+                <div className="text-center mb-4">
+                    <i className="bi bi-circle-fill mx-1"></i>
+                    <i className="bi bi-circle-fill mx-1"></i>
+                    <i className="bi bi-circle-half mx-1"></i>
                 </div>
-                <div class="text-center my-4">
+                <div className="text-center my-4">
                     <h2>Paso 3 de 3</h2>
                 </div>
-                <div class="text-center my-4">
+                <div className="text-center my-4">
                     <h2>¡Ahora es nuestro turno!</h2>
                 </div>
-                <div class="row col-10 col-sm-8 col-lg-6 mx-auto">
-                    <div class="px-0 mb-4">
+                <div className="row col-10 col-sm-8 col-lg-6 mx-auto">
+                    <div className="px-0 mb-4">
                         Puedes revisar los datos de tu transacción. Dentro de breve verificaremos la operación y transferiremos el monto correspondiente.
                     </div>
-                    <div class="px-0">
-                        <label class="form-label">Número de transacción: </label>
+                    <div className="px-0">
+                        <label className="form-label">Número de transacción: </label>
                     </div>
                     <div className="mb-3 px-0">
                     {
@@ -56,8 +56,8 @@ const VentaBtcTer = () => {
                         })()
                     }
                     </div>
-                    <div class="px-0 mt-4">
-                        <label class="form-label">Monto en soles operado:</label>
+                    <div className="px-0 mt-4">
+                        <label className="form-label">Monto en soles operado:</label>
                     </div>
                     <div className="mb-3 px-0">
                     {
@@ -68,9 +68,9 @@ const VentaBtcTer = () => {
                     }
                     </div>
                 </div>
-                <div class=" row col-10 col-sm-8 col-lg-6 mx-auto mb-5">
-                    <div class="col-12 px-0">
-                        <button class="btn btn-success col-12" onClick={ buttonFinalizar }>Finalizar</button>
+                <div className=" row col-10 col-sm-8 col-lg-6 mx-auto mb-5">
+                    <div className="col-12 px-0">
+                        <button className="btn btn-success col-12" onClick={ buttonFinalizar }>Finalizar</button>
                     </div>
                 </div>
             </div>

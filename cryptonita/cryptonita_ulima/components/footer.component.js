@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const Footer = () => {
     
     return <footer className="row p-2 txt_min mt-5">
@@ -6,10 +8,10 @@ const Footer = () => {
         </div>
         <div className="col-lg-2 order-1 order-sm-2">
             <div className="">
-                <a className="btn btn-link btn-block col-12 link-style" href="/nosotros">Nosotros</a>
+                <Link className="btn btn-link btn-block col-12 link-style" href="/nosotros">Nosotros</Link>
             </div>
             <div className="">
-                <a className="btn btn-link col-12 link-style" href="/terminosCondiciones">Términos y Condiciones</a>
+                <Link className="btn btn-link col-12 link-style" href="/terminosCondiciones">Términos y Condiciones</Link>
             </div>
         </div>
         <div className="col-lg-5 text-center py-5 bold link-style order-2 order-lg-3">

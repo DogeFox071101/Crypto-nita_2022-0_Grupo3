@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Link from "next/link"
 
 const Header = (props) => {
     const newClient = () => {
@@ -8,9 +9,9 @@ const Header = (props) => {
     if (props.index == "1") {
         return <header className="row p-2 mb-4 text-center text-lg-start">
             <figure className="col-lg-9 m-0">
-                <a href="/">
+                <Link href="/">
                     <img className="logo" src="/media/cryptonita.png" alt="" />
-                </a>
+                </Link>
             </figure>
             <div className="col-lg-3 text-center py-sm-4">
                 <button className="register-btn" onClick={ newClient }>¡Crea tu Cuenta Aquí!</button>
@@ -20,9 +21,9 @@ const Header = (props) => {
     else {
         return <header className="p-2 mb-4 text-center text-lg-start">
         <figure className="">
-            <a className="" href="/">
+            <Link className="" href="/">
                 <img className="logo" src="/media/cryptonita.png" alt="" />
-            </a>
+            </Link>
         </figure>
     </header>
 

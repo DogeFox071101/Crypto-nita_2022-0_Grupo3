@@ -14,27 +14,27 @@ const EditarOperacion = () => {
             </div>
             <div className="col-5 mx-auto my-2">
                 <div className="row my-2">
-                    <label className="col-4" for="">Nombres:</label>
+                    <label className="col-4">Nombres:</label>
                     <input className="col-8" type="text" />
                 </div>
                 <div className="row my-2">
-                    <label className="col-4" for="">Apellidos:</label>
+                    <label className="col-4">Apellidos:</label>
                     <input className="col-8" type="text" />
                 </div>
                 <div className="row my-2">
-                    <label className="col-4" for="">DNI:</label>
+                    <label className="col-4">DNI:</label>
                     <input className="col-8" type="text" />
                 </div>
                 <div className="row my-2">
-                    <label className="col-4" for="">Correo Electrónico:</label>
+                    <label className="col-4">Correo Electrónico:</label>
                     <input className="col-8" type="text" />
                 </div>
                 <div className="row my-2">
-                    <label className="col-4" for="">Número:</label>
+                    <label className="col-4">Número:</label>
                     <input className="col-8" type="text" />
                 </div>
                 <div className="row my-2">
-                    <label className="col-4" for="">Estado:</label>
+                    <label className="col-4">Estado:</label>
                     <input className="col-8" type="text" />
                 </div>
                 <div className="row mt-4 mb-4">

@@ -1,6 +1,7 @@
 import Footer from "../components/footer.component"
 import Header from "../components/header.component"
 import React, { useEffect } from "react";
+import Link from "next/link"
 
 const Nosotros = () => {
     useEffect(() => {
@@ -12,9 +13,9 @@ const Nosotros = () => {
 
             <div className="row">
                 <div className="col-1">
-                    <a href="/">
+                    <Link href="/">
                         <img src="/back.png" alt="Vercel Logo" width={40} height={40} />
-                    </a>
+                    </Link>
                 </div>
                 <h1 className="col-8">Nosotros</h1>
             </div>

@@ -2,7 +2,7 @@ import Footer from "../components/footer.component"
 import Header from "../components/header.component"
 import React, { useEffect } from "react";
 
-const registroCliente = () => {
+const RegistroCliente = () => {
     const gotoLogin = () => {
         location.href = "/"
     }
@@ -22,13 +22,13 @@ const registroCliente = () => {
                 Registro
             </h2>
             <div className="text-center my-4">
-            <div class="container-fluid mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nombres</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nombres*"/>
-            <label for="exampleFormControlInput1" class="form-label">Apellidos</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Apellidos*"/>
-            <label for="exampleFormControlInput1" class="form-label">Número de DNI</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Número de DNI*"/>
+            <div className="container-fluid mb-3">
+            <label htmlFor="exampleFormControlInput1" className="form-label">Nombres</label>
+            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Nombres*"/>
+            <label htmlFor="exampleFormControlInput1" className="form-label">Apellidos</label>
+            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Apellidos*"/>
+            <label htmlFor="exampleFormControlInput1" className="form-label">Número de DNI</label>
+            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Número de DNI*"/>
             </div>
                 <div>
                     <button className="btn btn-success m-2 admin" onClick={ gotoRegistro2 }>Siguiente</button>
@@ -42,4 +42,4 @@ const registroCliente = () => {
     </div>
 }
 
-export default registroCliente
+export default RegistroCliente
