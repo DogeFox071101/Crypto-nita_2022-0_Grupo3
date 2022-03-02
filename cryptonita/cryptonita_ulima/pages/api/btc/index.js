@@ -2,7 +2,11 @@ import { getTipoCambio, setTipoCambio, getHistorialTipoCambio } from "../../../d
 
 const btcHandler = async (req, res) => {
     if (req.method == "GET") {
-
+        const tipoCambioGroup = await getTipoCambio()
+        res.json({
+            msg : "a",
+            tipoCambio : tipoCambioGroup
+        })
     }
     else if (req.method == "POST") {
         const data = JSON.parse(req.body)

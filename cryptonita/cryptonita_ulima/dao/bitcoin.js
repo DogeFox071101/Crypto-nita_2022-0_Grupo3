@@ -6,9 +6,8 @@ const getTipoCambio = async () => {
         order : [
             [ 'createdAt', 'DESC' ]
         ]
-    }).then(function(entries){
-
     })
+    
 }
 
 const setTipoCambio = async (compra, venta) => {

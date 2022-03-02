@@ -1,15 +1,41 @@
 import Footer from "../components/footer.component"
 import Header from "../components/header.component"
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const CompraVenta = () => {
-    const SolicitarCV = () => {
-        if (id == "Comprar")
+    const [tipoCambio, setTipoCambio] = useState(null)
+    const [txtTipoOperacion, setTxtTipoOperacion] = useState("")
+    const [txtMontoBtc, setTxtMontoBtc] = useState("")
+    const [txtMontoSoles, setTxtMontoSoles] = useState("")
+
+    const txtTipoOperacionOnChange = (event) => {
+        setTxtTipoOperacion(event.target.value)
     }
+
+    const txtMontoBtcOnChange = (event) => {
+        setTxtMontoBtc(event.target.value)
+    }
+
+    const txtMontoSolesOnChange = (event) => {
+        setTxtMontoSoles(event.target.value)
+    }
+
+    const obtenerTipoCambio = async () => {
+        const resp = await fetch("/api/btc")
+        const data = await resp.json()
+        setTipoCambio(data.tipoCambio[0])
+        console.log(data.tipoCambio[0])
+    }
+
+    const crearOperacion = async () => {
+
+    }
+
 
     useEffect(() => {
         document.title = "Comprar o Vender | Crypto-nita"
-    })
+        obtenerTipoCambio()
+    }, [])
     return <div>
         <Header></Header>
         <main className="p-2 mt-4">
@@ -20,12 +46,20 @@ const CompraVenta = () => {
                 <h6>¿Qué operación desea realizar?</h6>
             </div>
             <div className="col-4 mx-auto my-2">
-                <select className="container">
-                    <option id="Comprar">Comprar</option>
-                    <option id="Vender">Vender</option>
+                <select className="container" defaultValue={ 0 } onClick={ txtTipoOperacionOnChange } >
+                    <option value={ 0 }> ------ Seleccione una opción ------</option>
+                    <option value={ "Compra" }>Comprar</option>
+                    <option value={ "Venta" }>Vender</option>
                 </select>
             <div className="col-9 mx-auto my-2 mt-4">
-                <p>Tipo de Cambio: 1 BTC = 152,795.82 PEN</p>
+                <p>Tipo de Cambio: 1 BTC = { (() => {
+                    if (txtTipoOperacion == "Compra") {
+                        return tipoCambio.valueBuy
+                    }
+                    else if (txtTipoOperacion == "Venta") {
+                        return tipoCambio.valueSell
+                    }
+                })() } PEN</p>
             </div>
             </div>
             <div className="col-4 mx-auto my-2 mt-4">
