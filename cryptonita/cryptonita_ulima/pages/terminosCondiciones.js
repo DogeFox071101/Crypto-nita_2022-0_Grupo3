@@ -9,8 +9,14 @@ const TerminosYcondiciones = () => {
     return <div>
         <Header></Header>
         <main className="container">
+
             <div className="row">
-                <h1 className="col-8"><i class="bi bi-arrow-left"></i> &nbsp;Terminos y Condiciones&nbsp;&nbsp;
+                <div className="col-1">
+                    <a href="/">
+                        <img src="/back.png" alt="Vercel Logo" width={40} height={40} />
+                    </a>
+                </div>
+                <h1 className="col-8"><i></i> &nbsp;Terminos y Condiciones&nbsp;&nbsp;
                     <span className="">
                         <img src="/tyc.png" alt="Vercel Logo" width={70} height={70} />
                     </span>
@@ -104,10 +110,6 @@ const TerminosYcondiciones = () => {
                     previo aviso. Estas terminos y condiciones se han generado en
                     terminosycondicionesdeusoejemplo.com.
                 </div>
-            </div>
-            <div>
-            <button type="button" class="btn btn-primary mx-auto">Aceptar</button>
-                    <button type="button" class="btn btn-light mx-auto">Rechazar</button>
             </div>
         </main>
         <Footer></Footer>

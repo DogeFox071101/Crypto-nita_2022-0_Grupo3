@@ -3,6 +3,16 @@ import Header from "../components/header.component"
 import React, { useEffect } from "react";
 
 const registroClienteSig = () => {
+    const gotoRegistro1 = () => {
+        location.href = "/registroCliente"
+    }
+
+    const gotoValidacion = () => {
+        location.href = "/validacion1"
+    }
+
+
+
     useEffect(() => {
         document.title = "Página Principal | Crypto-nita"
     })
@@ -24,11 +34,11 @@ const registroClienteSig = () => {
             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Número Telefónico*"/>
             </div>
                 <div>
-                    <button className="btn btn-success m-2 admin">Anterior</button>
+                    <button className="btn btn-success m-2 admin" onClick={ gotoValidacion }>Siguiente</button>
                 </div>
                 <div>
-                    <button className="btn btn-success m-2 admin">Siguiente</button>
-                </div>
+                    <button className="btn btn-success m-2 admin" onClick={ gotoRegistro1 }>Anterior</button>
+                </div>                
             </div>
         </main>
         <Footer></Footer>

@@ -3,6 +3,11 @@ import Header from "../components/header.component"
 import React, { useEffect } from "react";
 
 const validacion = () => {
+    const gotoLogin = () => {
+        location.href = "/"
+    }
+
+
     useEffect(() => {
         document.title = "Página Principal | Crypto-nita"
     })
@@ -26,7 +31,7 @@ const validacion = () => {
 
                 </div>
                 <div>
-                    <button className="btn btn-success m-2 admin">Cerrar Sesión</button>
+                    <button className="btn btn-success m-2 admin" onClick={ gotoLogin }>Cerrar Sesión</button>
                 </div>
 
 

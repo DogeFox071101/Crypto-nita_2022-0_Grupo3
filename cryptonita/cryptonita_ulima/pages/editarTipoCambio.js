@@ -8,6 +8,10 @@ const EditarTipoCambio = () => {
     const [txtPrecioVenta, setTxtPrecioVenta] = useState("")
     const [numPrecioCompra, setNumPrecioCompra] = useState(0)
     const [numPrecioVenta, setNumPrecioVenta] = useState(0)
+
+    const gotoPadmin = () => {
+        location.href = "/panelAdmin"
+    }
     
     const txtPrecioCompraOnChange = (event) => {
         const txtPrecioCompraIngresado = event.target.value
@@ -79,7 +83,7 @@ const EditarTipoCambio = () => {
                 }
                 <div className="my-4 row">
                     <div className="col-sm-6 pe-sm-1 mb-1 mb-sm-0">
-                        <button className="btn btn-success col-12">Cancelar</button>
+                        <button className="btn btn-success col-12" onClick={ gotoPadmin }>Cancelar</button>
                     </div>
                     <div className="col-sm-6 ps-sm-1 mt-1 mt-sm-0">
                         <button className="btn btn-success col-12" onClick={ aplicarCambios }>Aplicar Cambios</button>
