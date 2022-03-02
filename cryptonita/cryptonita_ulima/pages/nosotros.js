@@ -23,44 +23,24 @@ const Nosotros = () => {
             <div className="col-6 mx-auto text-center">
 
                 <div className="{styles.column2}">
-                    <a href="https://nextjs.org/docs" className="{styles.card}">
-                        <img src="/persona.jpg" alt="Vercel Logo" width={200} height={300} />
-
-                        <p>Rodrigo Salazar Vega
-
-                        </p>
-                    </a>
-                </div>
-                <div className="{styles.column2}">
-                    <img src="/persona.jpg" alt="Vercel Logo" width={200} height={300} />
-
-                    <a href="https://nextjs.org/docs" className="{styles.card}">
-                        <p>Juan Diego Rojas Saldarriaga
-
-                        </p>
-                    </a>
-                </div>
-                <div className="{styles.column2}">
-                    <img src="/persona.jpg" alt="Vercel Logo" width={200} height={300} />
-
-                    <a href="https://nextjs.org/docs" className="{styles.card}">
-                        <p>Luis Manuel Mondoñedo Cabanillas
-
-                        </p>
-                    </a>
+                    <img src="/Leonardo.jpg" alt="Vercel Logo" width={200} height={300} />
+                    <p>Leonardo Guillermo Falcón Choque</p>
                 </div>
 
                 <div className="{styles.column2}">
-                    <img src="/persona.jpg" alt="Vercel Logo" width={200} height={300} />
-
-                    <a href="https://nextjs.org/docs" className="{styles.card}">
-                        <p>Leonardo Guillermo Falcón Choque
-
-                        </p>
-                    </a>
+                    <img src="/LuisManuel.jpg" alt="Vercel Logo" width={200} height={300} />
+                    <p>Luis Manuel Mondoñedo Cabanillas</p>
                 </div>
 
+                <div className="{styles.column2}">
+                    <img src="/JuanDiego.jpg" alt="Vercel Logo" width={200} height={300} />
+                    <p>Juan Diego Rojas Saldarriaga</p>
+                </div>
 
+                <div className="{styles.column2}">
+                    <img src="/Rodrigo.jpg" alt="Vercel Logo" width={200} height={300} />
+                    <p>Rodrigo Salazar Vega</p>    
+                </div>
 
             </div>
         </main>
