@@ -18,6 +18,7 @@ const PanelAdmin = () => {
     
 
     const goToHome = () => {
+        localStorage.removeItem("lastDataLogin")
         location.href = "/"
     }
     
