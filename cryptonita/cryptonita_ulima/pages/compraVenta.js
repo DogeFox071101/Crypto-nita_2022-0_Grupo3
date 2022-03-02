@@ -3,6 +3,10 @@ import Header from "../components/header.component"
 import React, { useEffect } from "react";
 
 const CompraVenta = () => {
+    const SolicitarCV = () => {
+        if (id == "Comprar")
+    }
+
     useEffect(() => {
         document.title = "Comprar o Vender | Crypto-nita"
     })
@@ -17,8 +21,8 @@ const CompraVenta = () => {
             </div>
             <div className="col-4 mx-auto my-2">
                 <select className="container">
-                    <option>Comprar</option>
-                    <option>Vender</option>
+                    <option id="Comprar">Comprar</option>
+                    <option id="Vender">Vender</option>
                 </select>
             <div className="col-9 mx-auto my-2 mt-4">
                 <p>Tipo de Cambio: 1 BTC = 152,795.82 PEN</p>
