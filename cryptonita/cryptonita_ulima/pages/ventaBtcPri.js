@@ -40,6 +40,10 @@ const VentaBtcPri = () => {
         await subirOperacionIncompleta()
         location.href = "/ventaBtcSeg"
     }
+
+    const cancelOp = () => {
+        location.href = "/compraVenta"
+    }
     
     useEffect(() => {
         document.title = "Paso 1 de 3 | Venta de BTC"
@@ -71,7 +75,7 @@ const VentaBtcPri = () => {
                 </div>
                 <div className=" row row col-10 col-sm-8 col-lg-6 mx-auto mb-5">
                     <div className="col-6 pe-1 ps-0">
-                        <button className="btn btn-success col-12">Regresar</button>
+                        <button className="btn btn-success col-12" onClick={ cancelOp }>Cancelar</button>
                     </div>
                     <div className="col-6 ps-1 pe-0">
                         <button className="btn btn-success col-12" onClick={ buttonNextHandler }>Continuar</button>
