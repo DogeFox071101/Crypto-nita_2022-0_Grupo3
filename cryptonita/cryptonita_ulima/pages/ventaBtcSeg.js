@@ -12,14 +12,10 @@ const VentaBtcSeg = () => {
     }
 
     const obtenerOperacionIncompleta = async () => {
-        const dataOnLocal = {
-            email : "lgfalconch@gmail.com",
-            password : "2f4f13561f3e031d1b5a489627c170df87a132245feb64582e50880995f9c230",
-            id : "1"
-        }
-        const resp = await fetch(`/api/operacion/incomplete/${dataOnLocal.id}`)
+        const resp = await fetch(`/api/operacion/incomplete/${localStorage.getItem("idCliente")}`)
         const data = await resp.json()
         setOperacion(data.operacion)
+        console.log(data.operacion)
     }
 
     const actualizarOperacionVentaDos = () => {
@@ -40,7 +36,7 @@ const VentaBtcSeg = () => {
     }
     const buttonNextHandler = async () => {
         //await crearOperacion()
-        await obtenerOperacionIncompleta()
+        
         actualizarOperacionVentaDos()
         await subirOperacionPendiente()
         location.href = "/ventaBtcTer"
@@ -48,7 +44,8 @@ const VentaBtcSeg = () => {
 
     useEffect(() => {
         document.title = "Paso 2 de 3 | Venta de BTC"
-    })
+        obtenerOperacionIncompleta()
+    },[])
     return <div>
         <Header></Header>
         <main class="p-2 mt-4">

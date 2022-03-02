@@ -12,6 +12,8 @@ const PanelCliente = () => {
     }
 
     const gotoLogin = () => {
+        localStorage.removeItem("lastDataLogin")
+        localStorage.removeItem("idCliente")
         location.href = "/"
     }
 
