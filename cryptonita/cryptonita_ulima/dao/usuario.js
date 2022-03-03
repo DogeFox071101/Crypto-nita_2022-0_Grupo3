@@ -50,7 +50,7 @@ const setUsuario = async (usuario) => {
     usuarioAModificar.dni = usuario.dni
     usuarioAModificar.email = usuario.email
     usuarioAModificar.telefono = usuario.telefono
-    usuarioAModificar.usuario = usuario.usuario
+    usuarioAModificar.estado = usuario.estado
     await usuarioAModificar.save()
 
 }

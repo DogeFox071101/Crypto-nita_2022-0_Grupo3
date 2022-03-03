@@ -4,46 +4,19 @@ import React, { useEffect, useState } from "react";
 
 const EditarOperacion = () => {
     const [usuario, setUsuario] = useState(null)
-    const [txtNombre, setTxtNombre] = useState("")
-    const [txtApellidos, setTxtApellidos] = useState("")
-    const [txtDni, setTxtDni] = useState("")
-    const [txtEmail, setTxtEmail] = useState("")
-    const [txtNumero, setTxtNumero] = useState("")
     const [txtEstado, setTxtEstado] = useState("")
-
-    const txtNombreOnChange = (event) => {
-        setTxtNombre(event.target.value)
-    }
-
-    const txtApellidosOnChange = (event) => {
-        setTxtApellidos(event.target.value)
-    }
-
-    const txtDniOnChange = (event) => {
-        setTxtDni(event.target.value)
-    }
-
-    const txtEmailOnChange = (event) => {
-        setTxtEmail(event.target.value)
-    }
-
-    const txtNumeroOnChange = (event) => {
-        setTxtNumero(event.target.value)
-    }
 
     const txtEstadoOnChange = (event) => {
         setTxtEstado(event.target.value)
     }
 
     const actualizarUsuario = () => {
+        console.log(usuario)
         const usuarioActual = usuario
-        usuarioActual.nombre = txtNombre
-        usuarioActual.apellidos = txtApellidos
-        usuarioActual.dni = txtDni
-        usuarioActual.email = txtEmail
-        usuarioActual.telefono = txtNumero
-        usuarioActual.usuario = txtEstado
+        usuarioActual.estado = txtEstado
         setUsuario(usuarioActual)
+        
+        console.log(usuarioActual)
     }
 
     const subirUsuarioActualizado = async () => {
@@ -69,6 +42,7 @@ const EditarOperacion = () => {
     const obtenerUsuario = async () => {
         const resp = await fetch(`/api/cliente/${localStorage.getItem("idClienteEdit")}`)
         const data = await resp.json()
+        console.log(data)
         setUsuario(data.usuario)
     }
     
@@ -85,27 +59,27 @@ const EditarOperacion = () => {
             <div className="col-5 mx-auto my-2">
                 <div className="row my-2">
                     <label className="col-4">Nombres:</label>
-                    <input className="col-8" type="text" defaultValue={ usuario != null ? usuario.nombre : "" } onChange={txtNombreOnChange}  />
+                    <input className="col-8" type="text" defaultValue={ usuario != null ? usuario.nombre : 0 } disabled={true}/>
                 </div>
                 <div className="row my-2">
                     <label className="col-4">Apellidos:</label>
-                    <input className="col-8" type="text" defaultValue={ usuario != null ? usuario.apellidos : "" } onChange={txtApellidosOnChange} />
+                    <input className="col-8" type="text" defaultValue={ usuario != null ? usuario.apellidos : 0 } disabled={true}/>
                 </div>
                 <div className="row my-2">
                     <label className="col-4">DNI:</label>
-                    <input className="col-8" type="text" defaultValue={ usuario != null ? usuario.dni : "" } onChange={txtDniOnChange}/>
+                    <input className="col-8" type="text" defaultValue={ usuario != null ? usuario.dni : 0 } disabled={true}/>
                 </div>
                 <div className="row my-2">
                     <label className="col-4">Correo Electrónico:</label>
-                    <input className="col-8" type="text" defaultValue={ usuario != null ? usuario.email : "" } onChange={txtEmailOnChange}/>
+                    <input className="col-8" type="text" defaultValue={ usuario != null ? usuario.email : 0 } disabled={true}/>
                 </div>
                 <div className="row my-2">
                     <label className="col-4">Número de teléfono:</label>
-                    <input className="col-8" type="text" defaultValue={ usuario != null ? usuario.telefono : "" } onChange={txtNumeroOnChange} />
+                    <input className="col-8" type="text" defaultValue={ usuario != null ? usuario.telefono : 0 } disabled={true}/>
                 </div>
                 <div className="row my-2">
                     <label className="col-4">Estado:</label>
-                    <select className="col-8" type="text" defaultValue={ usuario != null ? usuario.usuario : "Pendiente" } onChange={txtEstadoOnChange}>
+                    <select className="col-8" type="text" onChange={txtEstadoOnChange} defaultValue={ usuario != null ? usuario.estado : 0 } >
                         <option value={"Pendiente"}>Pendiente</option>
                         <option value={"Validado"}>Validado</option>
                     </select>

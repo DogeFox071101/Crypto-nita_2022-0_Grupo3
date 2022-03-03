@@ -2,26 +2,38 @@ import Footer from "../components/footer.component"
 import Header from "../components/header.component"
 import React, { useEffect, useState } from "react";
 
-const ListaOperaciones = () => {
+const ListaClientes = () => {
     const [listaClientes, setListaClientes] = useState([])
+    const [txtField, setTxtField] = useState("")
 
     const editarCliente = (cliente) => {
         localStorage.setItem("idClienteEdit", cliente.id)
         location.href = "/editarCliente"
     }
 
-    const obtenerListaClientes = async() => {
-        const resp = await fetch("/api/cliente")
-        const data = await resp.json()
-        setListaClientes(data.usuarios)
-        console.log(data.usuarios)
+    const txtFieldOnChange = (event) => {
+        setTxtField(event.target.value)
+    }
 
+    const obtenerListaClientes = async() => {
+        if (txtField == "") {
+            const resp = await fetch(`/api/cliente/all/everyone`)
+            const data = await resp.json()
+            setListaClientes(data.usuarios)
+            console.log(data.usuarios)
+        }
+        else {
+            const resp = await fetch(`/api/cliente/all/${txtField}`)
+            const data = await resp.json()
+            setListaClientes(data.usuarios)
+            console.log(data.usuarios)
+        }
     }
 
     useEffect(() => {
         document.title = "Lista de Usuarios | Crypto-nita"
         obtenerListaClientes()
-    },[])
+    },[txtField])
     return <div>
         <Header></Header>
         <main className="p-2 mt-4">
@@ -30,7 +42,7 @@ const ListaOperaciones = () => {
 
             </div>
             <div>
-                <input className="form-control" placeholder="Filtrar por Nombres, Apellidos, Email"></input>
+                <input className="form-control" placeholder="Filtrar por Nombres, Apellidos, DNI, o Email" onChange={txtFieldOnChange}></input>
             </div>
             <div className="col-12 mx-auto my-2">
                 <table className="table table-stripped table-bordered table-responsive">
@@ -54,7 +66,7 @@ const ListaOperaciones = () => {
                                     <td>{cliente.dni}</td>
                                     <td>{cliente.email}</td>
                                     <td>{cliente.telefono}</td>
-                                    <td>{cliente.usuario}</td>
+                                    <td>{cliente.estado}</td>
                                     <td><button className="btn btn-link" onClick={ () => {
                                         editarCliente(cliente)
                                     } }>Editar</button></td>
@@ -71,4 +83,4 @@ const ListaOperaciones = () => {
     </div>
 }
 
-export default ListaOperaciones
+export default ListaClientes
