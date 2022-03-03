@@ -48,11 +48,32 @@ const setUsuario = async (usuario) => {
     usuarioAModificar.nombre = usuario.nombre
     usuarioAModificar.apellidos = usuario.apellidos
     usuarioAModificar.dni = usuario.dni
+    usuarioAModificar.password = usuario.password
     usuarioAModificar.email = usuario.email
     usuarioAModificar.telefono = usuario.telefono
     usuarioAModificar.estado = usuario.estado
     await usuarioAModificar.save()
-
 }
 
-export { getUsuarioByEmail, getAdminByEmail, getUsuario, getUsuarios, getUsuarioEmail, setUsuario }
+const genUsuario = async (nombre, apellidos, dni) => {
+    const nuevoUsuario = await db.Usuario.create({
+        nombre : nombre,
+        apellidos : apellidos,
+        dni : dni,
+        email : null,
+        password : null,
+        telefono : null,
+        estado : "Incompleto"
+    })
+    return nuevoUsuario
+}
+
+const getUsuarioDni = async (dni) => {
+    return await db.Usuario.findOne({
+        where : {
+            dni : dni
+        },
+    })
+}
+
+export { getUsuarioByEmail, getAdminByEmail, getUsuario, getUsuarioDni, getUsuarios, getUsuarioEmail, setUsuario, genUsuario }

@@ -3,9 +3,11 @@ import { getUsuario } from "../../../dao/usuario";
 
 const operacionHandler = async (req, res) => {
     if (req.method == "GET") {
+        var totalBtc = 0.0
         const operaciones = await getOperaciones()
         const operacionesEnLista = []
         for (let operacion of operaciones) {
+            totalBtc = totalBtc + parseFloat(operacion.montoBtc)            
             const usuario = await getUsuario(parseInt(operacion.idCliente))
             operacionesEnLista.push({
                 id : operacion.id,
@@ -25,7 +27,8 @@ const operacionHandler = async (req, res) => {
         }
         res.json({
             msg : "",
-            operaciones : operacionesEnLista
+            operaciones : operacionesEnLista,
+            total : totalBtc
         })
     }
     else if (req.method == "POST") {
