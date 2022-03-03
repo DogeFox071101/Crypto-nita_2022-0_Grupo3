@@ -1,8 +1,23 @@
 import Footer from "../components/footer.component"
 import Header from "../components/header.component"
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const ListaOperaciones = () => {
+    const [listaClientes, setOpClientes] = useState([])
+
+    const editarCliente = (cliente) => {
+        localStorage.setItem("EditarCliente", cliente.nombre)
+        location.href = "/editarCliente"
+    }
+
+    const obtenerListaClientes = async() => {
+        const resp = await fetch("")
+        const data = await resp.json()
+        setListaClientes(data.clientes)
+        console.log(data.clientes)
+
+    }
+
     useEffect(() => {
         document.title = "Lista de Operaciones | Crypto-nita"
     })
@@ -27,60 +42,21 @@ const ListaOperaciones = () => {
                         
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><button className="btn btn-link">Editar</button></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><button className="btn btn-link">Editar</button></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><button className="btn btn-link">Editar</button></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><button className="btn btn-link">Editar</button></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><button className="btn btn-link">Editar</button></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><button className="btn btn-link">Editar</button></td>
-                        </tr>
+                        {
+                            listaClientes.map((cliente) => {
+                                return <tr key={cliente.nombre}>
+                                    <td>{cliente.nombre}</td>
+                                    <td>{cliente.apellidos}</td>
+                                    <td>{cliente.dni}</td>
+                                    <td>{cliente.correo}</td>
+                                    <td>{cliente.telefono}</td>
+                                    <td>{cliente.estado}</td>
+                                    <td><button className="btn btn-link">Editar</button></td>
+                                    </tr>
+                            })
+                        }
+                        
+
                     </tbody>
                 </table>
             </div>
