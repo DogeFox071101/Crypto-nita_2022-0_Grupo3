@@ -18,7 +18,8 @@ module.exports = {
         dni : "75406134",
         email : "cliente_jd@gmail.com",
         password : "c7c646e5fd126873cfe4a44976cb6899a62cae1ac331e8f7ba07505bbc1fafe8",
-        telefono : "929147975",        
+        telefono : "929147975",      
+        estado : "Validado",  
         createdAt : new Date(),
         updatedAt : new Date()
       }

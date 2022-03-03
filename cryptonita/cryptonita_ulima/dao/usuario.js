@@ -1,4 +1,5 @@
 import db from "../sequelize/models"
+import operacion from "../sequelize/models/operacion"
 
 const getUsuarioByEmail = async (email) => {
     return await db.Usuario.findOne({
@@ -36,12 +37,22 @@ const getUsuarioEmail = async (email) => {
 
 const getUsuarios = async () => {
     return await db.Usuario.findAll({
-        
+        order : [
+            [ 'nombre', 'DESC' ]
+        ]
     })
 }
 
 const setUsuario = async (usuario) => {
-    
+    const usuarioAModificar = await getUsuario(usuario.id)
+    usuarioAModificar.nombre = usuario.nombre
+    usuarioAModificar.apellidos = usuario.apellidos
+    usuarioAModificar.dni = usuario.dni
+    usuarioAModificar.email = usuario.email
+    usuarioAModificar.telefono = usuario.telefono
+    usuarioAModificar.usuario = usuario.usuario
+    await usuarioAModificar.save()
+
 }
 
-export { getUsuarioByEmail, getAdminByEmail, getUsuario, getUsuarios, getUsuarioEmail }
+export { getUsuarioByEmail, getAdminByEmail, getUsuario, getUsuarios, getUsuarioEmail, setUsuario }

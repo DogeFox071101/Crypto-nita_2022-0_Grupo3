@@ -40,8 +40,13 @@ const EditarOperacion = () => {
     }
 
     const buttonUpdateHandler = async () => {
-        await actualizarOperacion()
+        actualizarOperacion()
         await subirOperacionEditada()
+        location.href = "/listaOperaciones"
+    }
+
+    const buttonAbort = () => {
+        localStorage.removeItem("idOoeracionEdit")
         location.href = "/listaOperaciones"
     }
 
@@ -104,7 +109,7 @@ const EditarOperacion = () => {
                     </div>
                     <div className="my-4 row">
                         <div className="col-sm-6 pe-sm-1 mb-1 mb-sm-0 g-0">
-                            <button className="btn btn-success col-12">Cancelar</button>
+                            <button className="btn btn-success col-12" onClick={buttonAbort}>Cancelar</button>
                         </div>
                         <div className="col-sm-6 pe-sm-1 mt-1 mt-sm-0 g-0">
                             <button className="btn btn-success col-12" onClick={ buttonUpdateHandler } >Aplicar Cambios</button>

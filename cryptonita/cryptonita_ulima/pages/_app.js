@@ -4,7 +4,7 @@ import '../styles/globals.css'
 import "../styles/styles.css"
 
 function MyApp({ Component, pageProps }) {
-  return <>
+  return <div>
     <Head>
       <meta charSet='UTF-8'></meta>
       <link rel='stylesheet' href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"></link>
@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
     <div className='container'>
       <Component {...pageProps} />
     </div>
-  </>
+  </div>
 }
 
 export default MyApp

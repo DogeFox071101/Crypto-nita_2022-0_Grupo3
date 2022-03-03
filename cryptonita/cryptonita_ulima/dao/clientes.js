@@ -12,7 +12,7 @@ const genCliente = async (tipoCambio, montoBtc, tipoOperacion, idCliente) => {
     })
     return nuevaOperacion
 }
-const getcliente = async (nombre) => {
+const getCliente = async (nombre) => {
     return await db.Operacion.findOne({
         where : {
             nombre : nombre
@@ -64,4 +64,4 @@ const delCliente = async (nombre) => {
     })
 }
 
-export { genCliente, getcliente, getClientes, getOpClientes, setOpClientes, delCliente, getClientePendiente }
+export { genCliente, getCliente, getClientes, getOpClientes, setOpClientes, delCliente, getClientePendiente }
