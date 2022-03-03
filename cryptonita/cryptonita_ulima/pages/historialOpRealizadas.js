@@ -1,11 +1,20 @@
 import Footer from "../components/footer.component"
 import Header from "../components/header.component"
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const HistorialOperaciones = () => {
+    const [historialOperaciones, setHistorialOperaciones] = useState([])
+
+    const obtenerHistorialOperaciones = async () => {
+        const resp = await fetch("/api/operacion")
+        const data = await resp.json()
+        setHistorialOperaciones(data.operaciones)
+    }
+
     useEffect(() => {
         document.title = "Historial de Operaciones | Crypto-nita"
-    })
+        obtenerHistorialOperaciones()
+    }, [])
     return <div>
         <Header></Header>
         <main className="p-2 mt-4">
@@ -25,48 +34,18 @@ const HistorialOperaciones = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        {
+                            historialOperaciones.map((operacion) => {
+                                return <tr key={ operacion.id }>
+                                    <td>{ operacion.id }</td>
+                                    <td>{ operacion.createdAt }</td>
+                                    <td>{ operacion.tipoOperacion }</td>
+                                    <td>{ operacion.tipoCambio }</td>
+                                    <td>{ operacion.montoBtc }</td>
+                                </tr>
+                            })
+                        }
+                        
                     </tbody>
                 </table>
             </div>
